@@ -333,8 +333,6 @@ void keyPressed()
       loop();
     }
   } 
-
-  // show info window
   if (key=='i' || key=='I')
   {
     if ((pause==false)  && (gameover==false))
