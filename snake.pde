@@ -1,27 +1,39 @@
+/* Work Cited: https://discourse.processing.org/t/how-to-make-the-snake-not-move-constantly/16453
+                this Page helped me with the arraylist to make the snakes body follow the head
+   This is a Slightly Fancy Snake Game. 
+   Arrow Keys to Move
+   N to Restart
+   I for Instructions
+   [spacebar] for pausing 
+*/
+
+
+
+
 String TITLE = "Danger Noodle";
-boolean showInfo;
-color snakeCol1=color(0);
+boolean showInfo; // information tab on or off switch
+color snakeCol1=color(0);//color
 color snakeCol2=color(92, 207, 66);
-float advance = 100;
-int slow = 10;
-int lastBase = 2;
-int cx, cy;
-int moveX = 0;
+float advance = 100; // checks if everything is reset after you die
+int slow = 10; // snake speed
+int lastBase = 2; //where the end of the snake is
+int cx, cy;// snake head
+int moveX = 0;//snake movement
 int moveY = 0;
-int snakeX = 0;
+int snakeX = 0;//snake body
 int snakeY = 0;
-int foodX = -1;
+int foodX = -1;//food pos
 int foodY = -1;
-boolean check = true;
-int[] snakesX;
+boolean check = true;//have you eaten the food
+int[] snakesX;// array list for snake body
 int[] snakesY;
-int snakeSize = 3;
-int baseX = 50;
-int baseY = 50;
-int windowSize = 400;
-boolean gameover = false;
-boolean pause=false;
-PImage backIMG;
+int snakeSize = 3;//starting size of snake
+int baseX = 50;// makes sure apples dont spawn in unreachable areas
+int baseY = 50;// also used as apple collison area
+int windowSize = 400;// size of playing area
+boolean gameover = false; // dead
+boolean pause=false;// pause 
+PImage backIMG; //images
 PImage foodIMG;
 PImage superfoodIMG;
 PImage head0IMG;
@@ -30,12 +42,12 @@ PImage head2IMG;
 PImage head3IMG;
 PImage bodyIMG;
 PImage tailIMG;
-int dir=0;
-int foodType = 0; 
+int dir=0; // direction snake is heading changes the image used to repersent the snakes head
+int foodType = 0; // foodtype 0 = normal foodtype 1 = bonus speed 
 void setup()
 {
   size(500, 500);
-  surface.setTitle(TITLE);
+  surface.setTitle(TITLE); 
   smooth();
   frameRate=60;
   backIMG = loadImage("back.png");
